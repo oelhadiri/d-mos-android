@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="#f3f3f3">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toasts"
+            android:layout_gravity="center"
+            style="@style/my_tv_style"></TextView>
+
+        <Button
+            android:id="@+id/btnToastShort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toast (SHORT)"
+            style="@style/my_button_style"></Button>
+
+        <Button
+            android:id="@+id/btnToastLong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toast (LONG)"
+            style="@style/my_button_style"></Button>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alert Dialogs"
+            android:layout_gravity="center"
+            style="@style/my_tv_style"></TextView>
+
+        <Button
+            android:id="@+id/btnAlertDialog1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AlertDialog (1 Button)"
+            style="@style/my_button_style"></Button>
+
+        <Button
+            android:id="@+id/btnAlertDialog2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AlertDialog (2 Buttons)"
+            style="@style/my_button_style"></Button>
+
+        <Button
+            android:id="@+id/btnAlertDialog3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AlertDialog (3 Buttons)"
+            style="@style/my_button_style"></Button>
+
+        <Button
+            android:id="@+id/btnAlertDialogCustomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AlertDialog (Custom Lyout)"
+            style="@style/my_button_style"></Button>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:layout_gravity="center"
+            style="@style/my_tv_style"></TextView>
+
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            style="@style/my_button_style"></Button>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Boites de dialogue &amp; Notifications</string>
+    <string name="app_msg_long">Voici un Toast Long</string>
+</resources>
