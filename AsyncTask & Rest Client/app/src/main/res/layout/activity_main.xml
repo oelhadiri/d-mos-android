@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnLong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Traitement Long"
+        android:textSize="28sp"
+        android:layout_margin="12dp"></Button>
+
+    <TextView
+        android:id="@+id/tvLong"
+        android:layout_below="@id/btnLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Long :("
+        android:layout_margin="12dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="32sp"
+        android:textColor="#00F"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCourt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Traitement Court"
+        android:textSize="28sp"
+        android:layout_below="@id/tvLong"
+        android:layout_margin="12dp"></Button>
+
+    <TextView
+        android:id="@+id/tvCourt"
+        android:layout_below="@id/btnCourt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Court :)"
+        android:layout_margin="12dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="32sp"
+        android:textColor="#00F"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvTest"
+        android:layout_below="@id/tvCourt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:layout_margin="12dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="32sp"
+        android:textColor="#00F"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
