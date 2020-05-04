@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_table_personne">
+        CREATE TABLE Personne
+        (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Nom TEXT NOT NULL,
+            Prenom TEXT NOT NULL,
+            DateNaissance TEXT NOT NULL,
+            EstActif  INTEGER DEFAULT 1
+        )
+    </string>
+    <string name="create_table_adresse">
+        CREATE TABLE Adresse
+        (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Detail TEXT NOT NULL,
+            Ville TEXT NOT NULL,
+            CodePostal TEXT NOT NULL,
+            IdPersonne INTEGER NOT NULL,
+            FOREIGN KEY (IdPersonne) REFERENCES Personne(Id)
+        )
+    </string>
+    <string name="delete_toutes_personnes">
+        DELETE FROM Personne
+    </string>
+    <string name="delete_toutes_adresses">
+        DELETE FROM Adresse
+    </string>
+    <string name="insert_une_personne">
+        INSERT INTO Personne(Nom, Prenom, DateNaissance, EstActif) VALUES (?, ?, ?, ?)
+    </string>
+    <string name="update_une_personne">
+        UPDATE Personne
+        SET Nom = ?, Prenom = ?, DateNaissance = ?, EstActif = ?
+        WHERE Id = ?
+    </string>
+    <string name="delete_une_personne">
+        DELETE FROM Personne WHERE Id = ?
+    </string>
+</resources>
