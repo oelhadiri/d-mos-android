@@ -2,8 +2,17 @@ package com.tdi.tinghir.demo.dialogs;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +21,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    static final String CHANNEL_ID = "10";
+    static final int NOTIF_ID = 100;
+    static final int REQUEST_CODE = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +146,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
                 break;
             case R.id.btnNotification:
+                Intent myIntent = new Intent(getApplicationContext(), Main2Activity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), REQUEST_CODE, myIntent, 0);
+
+                Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+                NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
+                        .setSmallIcon(R.drawable.icon)
+                        .setContentTitle("Titre Notification")
+                        .setContentText("Contenu Notification")
+                        .setSound(uri)
+                        .setContentIntent(pendingIntent);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "App Notif Channel", NotificationManager.IMPORTANCE_HIGH);
+                    NotificationManager notificationManager = (NotificationManager)getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+                    notificationManager.createNotificationChannel(channel);
+                    notificationManager.notify(NOTIF_ID, notifBuilder.build());
+                } else {
+                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+                    notificationManager.notify(NOTIF_ID, notifBuilder.build());
+                }
                 break;
             default:
         }
